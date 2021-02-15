@@ -2,7 +2,6 @@ package com.boot.bookingrestaurantapi.entities;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,8 +16,7 @@ import org.hibernate.annotations.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
-@SuppressWarnings("deprecation")
-@Entity
+@javax.persistence.Entity
 @Table(name="RESERVATION")
 @Getter
 @Setter
