@@ -41,7 +41,7 @@ public class Reservation {
 	@Column(name="TURN")
 	private String turn;
 	
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "RESTAURANT_ID",nullable = false)
 	private Restaurant restaurant;
 }
