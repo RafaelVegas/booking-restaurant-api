@@ -11,13 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Entity;
-
 import lombok.Getter;
 import lombok.Setter;
 
-@SuppressWarnings("deprecation")
-@Entity
+@javax.persistence.Entity
 @Table(name = "RESTAURANT")
 @Getter
 @Setter

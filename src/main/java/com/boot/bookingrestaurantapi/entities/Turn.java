@@ -15,8 +15,7 @@ import org.hibernate.annotations.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
-@SuppressWarnings("deprecation")
-@Entity
+@javax.persistence.Entity
 @Table(name = "TURN")
 @Getter
 @Setter
