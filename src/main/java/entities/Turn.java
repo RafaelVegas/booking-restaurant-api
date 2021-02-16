@@ -1,4 +1,4 @@
-package com.boot.bookingrestaurantapi.entities;
+package entities;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,23 +16,20 @@ import lombok.Getter;
 import lombok.Setter;
 
 @javax.persistence.Entity
-@Table(name = "BOARD")
+@Table(name = "TURN")
 @Getter
 @Setter
-public class Board {
+public class Turn {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID",nullable = false)
 	private Long id;
 	
-	@Column(name = "CAPACITY")
-	private Long capacity;
+	@Column(name = "NAME")
+	private String name;
 	
-	@Column(name = "NUMBER")
-	private Long number;
-	
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "RESTAURANT_ID",nullable = false)
 	private Restaurant restaurant;
 }
