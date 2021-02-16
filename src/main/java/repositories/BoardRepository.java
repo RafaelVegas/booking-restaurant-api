@@ -1,4 +1,4 @@
-package com.boot.bookingrestaurantapi.repositories;
+package repositories;
 
 import java.util.Optional;
 
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.boot.bookingrestaurantapi.entities.Board;
+import entities.Board;
 
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Id>{
