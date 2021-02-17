@@ -6,4 +6,6 @@ import jsons.RestaurantRest;
 public interface RestaurantServiceI {
 	
 	RestaurantRest getRestaurantById(Long restaurantId) throws BookingException ;
+	
+	RestaurantRest getRestaurantByName(String nameRestaurant) throws BookingException ;
 }
