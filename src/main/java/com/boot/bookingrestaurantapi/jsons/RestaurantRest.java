@@ -1,7 +1,5 @@
 package com.boot.bookingrestaurantapi.jsons;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -22,7 +20,7 @@ public class RestaurantRest {
 
 	@JsonProperty("image")
 	private String image;
-
+/*
 	@JsonProperty("reservation")
 	private List<ReservationRest> reservations;
 
@@ -31,7 +29,7 @@ public class RestaurantRest {
 
 	@JsonProperty("turn")
 	private List<TurnRest> turns;
-
+*/
 	public Long getId() {
 		return id;
 	}
@@ -71,7 +69,7 @@ public class RestaurantRest {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
+/*
 	public List<ReservationRest> getReservations() {
 		return reservations;
 	}
@@ -94,5 +92,5 @@ public class RestaurantRest {
 
 	public void setTurns(List<TurnRest> turns) {
 		this.turns = turns;
-	}
+	}*/
 }
