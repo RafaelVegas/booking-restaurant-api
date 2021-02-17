@@ -17,7 +17,6 @@ public class TurnService implements TurnServiceI{
 	
 	private static ModelMapper modelMapper = new ModelMapper();
 	
-	@Override
 	public TurnRest getTurnById(Long id) throws BookingException {		
 		return modelMapper.map(getTurnEntity(id), TurnRest.class);
 	}

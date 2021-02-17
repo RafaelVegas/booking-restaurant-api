@@ -17,12 +17,10 @@ public class RestaurantService implements RestaurantServiceI {
 
 	public static final ModelMapper modelMapper = new ModelMapper();
 
-	@Override
 	public RestaurantRest getRestaurantById(Long restaurantId) throws BookingException {
 		return modelMapper.map(getRestaurantEntity(restaurantId), RestaurantRest.class);
 	}
 
-	@Override
 	public RestaurantRest getRestaurantByName(String nameRestaurant) throws BookingException {
 		return modelMapper.map(getRestaurantEntityByName(nameRestaurant), RestaurantRest.class);
 	}

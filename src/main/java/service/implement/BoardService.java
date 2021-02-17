@@ -17,7 +17,6 @@ public class BoardService implements BoardServiceI{
 	
 	private static ModelMapper modelMappper = new ModelMapper();
 
-	@Override
 	public BoardRest findBoardById(Long id) throws BookingException{
 		return modelMappper.map(findByBoardEntity(id), BoardRest.class);
 	}
