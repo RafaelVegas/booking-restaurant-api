@@ -10,15 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Entity;
-
-import lombok.Getter;
-import lombok.Setter;
-
 @javax.persistence.Entity
 @Table(name = "TURN")
-@Getter
-@Setter
 public class Turn {
 
 	@Id
@@ -32,5 +25,29 @@ public class Turn {
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "RESTAURANT_ID",nullable = false)
 	private Restaurant restaurant;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
 }
 

@@ -10,11 +10,11 @@ public class NotFoundException extends BookingException{
 
 	private static final long serialVersionUID = 1L;
 
-	public NotFoundException(String code, int responseCode, List<ErrorDto> errorList, String message) {
+	public NotFoundException(String code, List<ErrorDto> errorList, String message) {
 		super(code, HttpStatus.NOT_FOUND.value(), errorList, message);
 	}
 
-	public NotFoundException(String code, int responseCode, String message) {
+	public NotFoundException(String code, String message) {
 		super(code, HttpStatus.NOT_FOUND.value(), message);
 		
 	}

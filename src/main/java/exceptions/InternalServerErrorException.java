@@ -14,7 +14,7 @@ public class InternalServerErrorException extends BookingException{
 		super(code, HttpStatus.INTERNAL_SERVER_ERROR.value(), errorList, message);
 	}
 	
-	public InternalServerErrorException(String code, int responseCode,  String message) {
+	public InternalServerErrorException(String code,  String message) {
 		super(code, HttpStatus.INTERNAL_SERVER_ERROR.value(), message);
 	}
 }
