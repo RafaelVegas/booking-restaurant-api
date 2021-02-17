@@ -26,8 +26,8 @@ public class Restaurant {
 	@Column(name = "DESCRIPTION")
 	private String description;
 	
-	@Column(name = "LOCATOR")
-	private String locator;
+	@Column(name = "ADDRESS")
+	private String address;
 	
 	@Column(name = "IMAGE")
 	private String image;
@@ -66,11 +66,11 @@ public class Restaurant {
 	}
 
 	public String getLocator() {
-		return locator;
+		return address;
 	}
 
 	public void setLocator(String locator) {
-		this.locator = locator;
+		this.address = locator;
 	}
 
 	public String getImage() {
