@@ -22,14 +22,8 @@ public class RestaurantRest {
 
 	@JsonProperty("image")
 	private String image;
-
-	@JsonProperty("reservation")
-	private List<ReservationRest> reservations;
-
-	@JsonProperty("board")
-	private List<BoardRest> boards;
-
-	@JsonProperty("turn")
+	
+	@JsonProperty("turns")
 	private List<TurnRest> turns;
 
 	public Long getId() {
@@ -70,22 +64,6 @@ public class RestaurantRest {
 
 	public void setImage(String image) {
 		this.image = image;
-	}
-
-	public List<ReservationRest> getReservations() {
-		return reservations;
-	}
-
-	public void setReservations(List<ReservationRest> reservations) {
-		this.reservations = reservations;
-	}
-
-	public List<BoardRest> getBoards() {
-		return boards;
-	}
-
-	public void setBoards(List<BoardRest> boards) {
-		this.boards = boards;
 	}
 
 	public List<TurnRest> getTurns() {
