@@ -15,9 +15,6 @@ public class BoardRest {
 	@JsonProperty("number")
 	private Long number;
 
-	@JsonProperty("restaurant")
-	private RestaurantRest restaurant;
-
 	public Long getId() {
 		return id;
 	}
@@ -40,13 +37,5 @@ public class BoardRest {
 
 	public void setNumber(Long number) {
 		this.number = number;
-	}
-
-	public RestaurantRest getRestaurant() {
-		return restaurant;
-	}
-
-	public void setRestaurant(RestaurantRest restaurant) {
-		this.restaurant = restaurant;
 	}
 }

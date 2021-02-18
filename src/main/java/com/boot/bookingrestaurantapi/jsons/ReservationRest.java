@@ -24,7 +24,7 @@ public class ReservationRest {
 	private String turn;
 
 	@JsonProperty("restaurant")
-	private RestaurantRest restaurant;
+	private AllRestaurantsTurnsBoardsRest restaurant;
 
 	public Long getId() {
 		return id;
@@ -66,11 +66,11 @@ public class ReservationRest {
 		this.turn = turn;
 	}
 
-	public RestaurantRest getRestaurant() {
+	public AllRestaurantsTurnsBoardsRest getRestaurant() {
 		return restaurant;
 	}
 
-	public void setRestaurant(RestaurantRest restaurant) {
+	public void setRestaurant(AllRestaurantsTurnsBoardsRest restaurant) {
 		this.restaurant = restaurant;
 	}
 }

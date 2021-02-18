@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class RestaurantRest {
+public class AllRestaurantsTurnsBoardsRest {
 
 	@JsonProperty("id")
 	private Long id;
@@ -26,6 +26,9 @@ public class RestaurantRest {
 	@JsonProperty("turns")
 	private List<TurnRest> turns;
 
+	@JsonProperty("boards")
+	private List<BoardRest> boards;
+	
 	public Long getId() {
 		return id;
 	}
@@ -72,5 +75,13 @@ public class RestaurantRest {
 
 	public void setTurns(List<TurnRest> turns) {
 		this.turns = turns;
+	}
+
+	public List<BoardRest> getBoards() {
+		return boards;
+	}
+
+	public void setBoards(List<BoardRest> boards) {
+		this.boards = boards;
 	}
 }
