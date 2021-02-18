@@ -8,14 +8,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CreateReservationRest {
 
-	@JsonProperty("id")
-	private Long id;
+	@JsonProperty("turnId")
+	private Long turnId;
 
 	@JsonProperty("person")
 	private Long person;
-
-	@JsonProperty("turnId")
-	private Long turnId;
 
 	@JsonProperty("date")
 	private Date date;
@@ -23,12 +20,12 @@ public class CreateReservationRest {
 	@JsonProperty("restaurantId")
 	private Long restaurantId;
 
-	public Long getId() {
-		return id;
+	public Long getTurnId() {
+		return turnId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setTurnId(Long turnId) {
+		this.turnId = turnId;
 	}
 
 	public Long getPerson() {
@@ -37,14 +34,6 @@ public class CreateReservationRest {
 
 	public void setPerson(Long person) {
 		this.person = person;
-	}
-
-	public Long getTurnId() {
-		return turnId;
-	}
-
-	public void setTurnId(Long turnId) {
-		this.turnId = turnId;
 	}
 
 	public Date getDate() {
