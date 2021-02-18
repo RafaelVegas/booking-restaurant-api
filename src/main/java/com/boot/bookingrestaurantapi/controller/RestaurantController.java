@@ -26,7 +26,7 @@ public class RestaurantController {
 			+ "}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public BookingRestaurantResponse<RestaurantRest> getBookingRestaurantById(@PathVariable Long restaurantId)
 			throws BookingException {
-		return new BookingRestaurantResponse<>("SUCESS", String.valueOf(HttpStatus.OK), "OK",
+		return new BookingRestaurantResponse<>("SUCCES", String.valueOf(HttpStatus.OK), "OK",
 				restaurantService.getRestaurantById(restaurantId));
 	}
 }
