@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.boot.bookingrestaurantapi.entities.Reservation;
 import com.boot.bookingrestaurantapi.entities.Restaurant;
@@ -18,6 +19,7 @@ import com.boot.bookingrestaurantapi.repositories.RestaurantRepository;
 import com.boot.bookingrestaurantapi.repositories.TurnRepository;
 import com.boot.bookingrestaurantapi.service.ReservationServiceI;
 
+@Service
 public class ReservationService implements ReservationServiceI {
 
 	private final static Logger LOGGER = LoggerFactory.getLogger(ReservationService.class);
@@ -38,9 +40,9 @@ public class ReservationService implements ReservationServiceI {
 	}
 
 	public String createReservation(CreateReservationRest createReservationRest) throws BookingException {
-		final Restaurant restauranteEntity = restaurantRepository.findById(createReservationRest.getId())
+		final Restaurant restauranteEntity = restaurantRepository.findById(createReservationRest.getRestaurantId())
 				.orElseThrow(() -> new NotFoundException("Error 404 ",
-						"Restaurante no registrado con id: " + createReservationRest.getRestaurantId()));
+						"Restaurante no registrado con el id de restaurante: " + createReservationRest.getRestaurantId() + ", o con el turno: " + createReservationRest.getTurnId()));
 
 		final Turn turnEntity = turnRepository.findById(createReservationRest.getTurnId())
 				.orElseThrow(() -> new NotFoundException("Error 404 ",
@@ -63,7 +65,7 @@ public class ReservationService implements ReservationServiceI {
 					"La reservada no ha sido guardada correctamente");
 		}
 
-		return null;
+		return "Reserva creada con localizador: " + locator;
 	}
 
 	private Reservation findByReservationByIdEntity(Long id) throws BookingException {
@@ -73,7 +75,7 @@ public class ReservationService implements ReservationServiceI {
 
 	private String getLocator(final Restaurant restaurantEntity, final CreateReservationRest createReservationRest)
 			throws BookingException {
-		return restaurantEntity.getName() + createReservationRest.getTurnId();
+		return restaurantEntity.getName() + " - " +createReservationRest.getTurnId() + "- direcciòn: " + restaurantEntity.getLocator();
 	}
 
 }
