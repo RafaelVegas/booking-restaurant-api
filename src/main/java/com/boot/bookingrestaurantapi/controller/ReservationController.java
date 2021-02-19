@@ -32,7 +32,7 @@ public class ReservationController {
 	}
 
 	@ResponseStatus(HttpStatus.OK)
-	@RequestMapping(method = RequestMethod.GET, value = "consult-reservation", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "consult-reservation" + "/{" + "id" + "}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public BookingRestaurantResponse<ReservationRest> findReservation(@PathVariable Long id) throws BookingException {
 		return new BookingRestaurantResponse<>("SUCESS", String.valueOf(HttpStatus.OK), "Consulta realizada",
 				reservationService.getReservation(id));
