@@ -32,6 +32,9 @@ public class Restaurant {
 	@Column(name = "IMAGE")
 	private String image;
 	
+	@Column(name= "PRICE")
+	private String price;
+	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "restaurant")
 	private List<Reservation> reservations;
 	
