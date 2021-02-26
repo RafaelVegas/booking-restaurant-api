@@ -23,8 +23,8 @@ public class RestaurantService implements RestaurantServiceI {
 
 	public static final ModelMapper modelMapper = new ModelMapper();
 
-	public AllRestaurantsTurnsBoardsRest getRestaurantById(Long restaurantId) throws BookingException {
-		return modelMapper.map(getRestaurantEntity(restaurantId), AllRestaurantsTurnsBoardsRest.class);
+	public AllRestaurantsTurnsBoardsRest getRestaurantById(Long id) throws BookingException {
+		return modelMapper.map(getRestaurantEntity(id), AllRestaurantsTurnsBoardsRest.class);
 	}
 
 	public AllRestaurantsTurnsBoardsRest getRestaurantByName(String nameRestaurant) throws BookingException {

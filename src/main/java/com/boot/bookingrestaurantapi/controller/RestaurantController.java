@@ -27,10 +27,10 @@ public class RestaurantController {
 	RestaurantService restaurantService;
 
 	@ResponseStatus(HttpStatus.OK)
-	@RequestMapping(value = "restaurant" + "/{" + "restaurantId"
+	@RequestMapping(value = "restaurant" + "/{" + "id"
 			+ "}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public BookingRestaurantResponse<AllRestaurantsTurnsBoardsRest> getBookingRestaurantById(@PathVariable Long restaurantId)
-			throws BookingException {
+	public BookingRestaurantResponse<AllRestaurantsTurnsBoardsRest> 
+			getBookingRestaurantById(@PathVariable Long restaurantId)throws BookingException {
 		return new BookingRestaurantResponse<>("SUCCES", String.valueOf(HttpStatus.OK), "OK",
 				restaurantService.getRestaurantById(restaurantId));
 	}
