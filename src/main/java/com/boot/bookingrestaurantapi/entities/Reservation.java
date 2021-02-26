@@ -31,6 +31,15 @@ public class Reservation {
 
 	@Column(name = "TURN")
 	private String turn;
+	
+	@Column(name = "NAME")
+	private String name;
+	
+	@Column(name = "EMAIL")
+	private String email;
+	
+	@Column(name= "PAYMENT")
+	private String payment;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "RESTAURANT_ID", nullable = false)
@@ -82,5 +91,29 @@ public class Reservation {
 
 	public void setRestaurant(Restaurant restaurant) {
 		this.restaurant = restaurant;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
 	}
 }
