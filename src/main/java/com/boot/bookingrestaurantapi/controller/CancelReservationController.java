@@ -16,7 +16,7 @@ import com.boot.bookingrestaurantapi.service.implement.CancelReservationService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(path = "/cancel-reservation")
+@RequestMapping(path = "/booking" + "/v1.0")
 public class CancelReservationController {
 
 	@Autowired

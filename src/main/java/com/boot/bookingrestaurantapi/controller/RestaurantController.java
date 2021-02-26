@@ -20,7 +20,7 @@ import com.boot.bookingrestaurantapi.service.implement.RestaurantService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200" )
-@RequestMapping(path = "/booking-restaurant" + "/v1.0")
+@RequestMapping(path = "/booking" + "/v1.0")
 public class RestaurantController {
 
 	@Autowired
