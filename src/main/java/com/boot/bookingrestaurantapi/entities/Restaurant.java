@@ -33,7 +33,7 @@ public class Restaurant {
 	private String image;
 	
 	@Column(name= "PRICE")
-	private String price;
+	private Long price;
 	
 	public String getAddress() {
 		return address;
@@ -41,14 +41,6 @@ public class Restaurant {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
 	}
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "restaurant")
@@ -122,6 +114,14 @@ public class Restaurant {
 
 	public void setTurns(List<Turn> turns) {
 		this.turns = turns;
+	}
+
+	public Long getPrice() {
+		return price;
+	}
+
+	public void setPrice(Long price) {
+		this.price = price;
 	}
 	
 }

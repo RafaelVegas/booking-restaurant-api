@@ -39,7 +39,7 @@ public class Reservation {
 	private String email;
 	
 	@Column(name= "PAYMENT")
-	private String payment;
+	private boolean payment;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "RESTAURANT_ID", nullable = false)
@@ -109,11 +109,11 @@ public class Reservation {
 		this.email = email;
 	}
 
-	public String getPayment() {
+	public boolean getPayment() {
 		return payment;
 	}
 
-	public void setPayment(String payment) {
+	public void setPayment(boolean payment) {
 		this.payment = payment;
 	}
 }
