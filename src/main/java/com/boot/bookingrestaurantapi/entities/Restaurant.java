@@ -35,6 +35,22 @@ public class Restaurant {
 	@Column(name= "PRICE")
 	private String price;
 	
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "restaurant")
 	private List<Reservation> reservations;
 	
