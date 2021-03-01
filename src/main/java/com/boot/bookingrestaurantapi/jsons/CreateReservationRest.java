@@ -19,6 +19,15 @@ public class CreateReservationRest {
 
 	@JsonProperty("restaurantId")
 	private Long restaurantId;
+	
+	@JsonProperty("name")
+	private String name;
+	
+	@JsonProperty("email")
+	private String email;
+	
+	@JsonProperty("payment")
+	private boolean payment;
 
 	public Long getTurnId() {
 		return turnId;
@@ -50,5 +59,29 @@ public class CreateReservationRest {
 
 	public void setRestaurantId(Long restaurantId) {
 		this.restaurantId = restaurantId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public boolean isPayment() {
+		return payment;
+	}
+
+	public void setPayment(boolean payment) {
+		this.payment = payment;
 	}
 }

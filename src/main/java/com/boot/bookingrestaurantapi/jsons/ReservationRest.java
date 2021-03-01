@@ -22,6 +22,12 @@ public class ReservationRest {
 
 	@JsonProperty("turn")
 	private String turn;
+	
+	@JsonProperty("name")
+	private String name;
+	
+	@JsonProperty("email")
+	private String email;
 
 	public Long getId() {
 		return id;
