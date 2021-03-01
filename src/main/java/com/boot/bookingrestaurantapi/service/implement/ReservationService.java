@@ -32,6 +32,9 @@ public class ReservationService implements ReservationServiceI {
 
 	@Autowired
 	private TurnRepository turnRepository;
+	
+	@Autowired
+	private EmailService emailService;
 
 	private ModelMapper modelMapper = new ModelMapper();
 
@@ -56,7 +59,10 @@ public class ReservationService implements ReservationServiceI {
 		reservation.setDate(createReservationRest.getDate());
 		reservation.setRestaurant(restauranteEntity);
 		reservation.setTurn(turnEntity.getName());
-
+		reservation.setPayment(createReservationRest.isPayment());
+		reservation.setEmail(createReservationRest.getEmail());
+		reservation.setName(createReservationRest.getName());
+		
 		try {
 			reservationRepository.save(reservation);
 		} catch (Exception e) {
@@ -64,6 +70,8 @@ public class ReservationService implements ReservationServiceI {
 			throw new InternalServerErrorException("Internal SERVER ERROR ",
 					"La reservada no ha sido guardada correctamente");
 		}
+		
+		emailService.processSendEmail(createReservationRest.getEmail(), "RESERVATION", createReservationRest.getName());
 
 		return "Reserva creada con localizador: " + locator;
 	}
