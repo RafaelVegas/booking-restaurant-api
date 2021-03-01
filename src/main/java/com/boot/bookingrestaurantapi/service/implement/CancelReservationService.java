@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.boot.bookingrestaurantapi.entities.Reservation;
 import com.boot.bookingrestaurantapi.exceptions.BookingException;
 import com.boot.bookingrestaurantapi.exceptions.InternalServerErrorException;
 import com.boot.bookingrestaurantapi.exceptions.NotFoundException;
@@ -18,9 +19,13 @@ public class CancelReservationService implements CancelReservationServiceI {
 
 	@Autowired
 	private ReservationRepository reservationRepository;
+	
+	@Autowired
+	private EmailService emailService;
 
 	public String deleteReservation(Long id) throws BookingException {
-		reservationRepository.findById(id).orElseThrow(() -> new NotFoundException("Locator Error 404",
+		
+		Reservation reservation = reservationRepository.findById(id).orElseThrow(() -> new NotFoundException("Locator Error 404",
 				"Reserva no encontrada con el id: " + id));
 		try {				
 			reservationRepository.deleteReservationById(id);
@@ -28,6 +33,8 @@ public class CancelReservationService implements CancelReservationServiceI {
 			LOGGER.error("INTERNAL SERVER ERROR",e);
 			new  InternalServerErrorException("INTERNAL SERVER ERROR ", "Error borrando la reserva con id: " + id);
 		}
+		
+		this.emailService.processSendEmail(reservation.getEmail(), "CANCEL", reservation.getName());
 		return "RESERVA BORRADA" ;
 	}
 
